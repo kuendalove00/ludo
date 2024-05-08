@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+}
+
+.ludo-container {
+    width: 450px;
+    margin: 20px auto;
+}
+
+.ludo-container .tabuleiro {
+    border: 1px solid red;
+    height: 450px;
+    width: 100%;
+    background-image: url();
+    background-size: contain;
+    position: relative;
+}
+
+.btn {
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-dado {
+    background-color: #009d60;
+    color: white;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.peças {
+    height: 100%;
+    width: 100%;
+}
+
+.peça {
+    width: 3%;
+    height: 3%;
+    border: 2px solid;
+    border-radius: 50%;
+    position: absolute;
+   /* top: 15%;
+    left: 50%;*/
+}
+
+.peça.highlight {
+    cursor: pointer;
+    border: 2px dashed;
+    animation: girar 1s infinite linear;
+}
+
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50%{
+        transform: rotate(180deg) scale(1.4);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+[id-jogador="P1"].peça {
+    background-color: #2eafff;
+}
+
+[id-jogador="P2"].peça {
+    background-color: #009d60;
+}
+
+[id-jogador="P3"].peça {
+    background-color: yellow;
+}
+
+[id-jogador="P4"].peça {
+    background-color: red;
+}
+
+
+.casa {
+    width: 40%;
+    height: 40%;
+    border: 30px solid;
+    position: absolute; 
+}
+
+.casas [id-jogador="P1"].casa {
+    bottom: 0;
+    left: 0;
+    border-color: #2eafff;
+}
+
+.casas [id-jogador="P2"].casa {
+    top: 0;
+    right: 0;
+    border-color: #009d60;
+}
+
+.casa.highlight {
+    animation: piscar .7s infinite ease-in-out;
+}
+
+@keyframes piscar {
+    50% {
+        border-color: rgba(255,255,255, 0.8);
+    }
+}
